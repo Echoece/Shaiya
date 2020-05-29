@@ -1,6 +1,6 @@
 **ep5 ps_game functions**
-
-* 004139E0 - CWorld::EnterUser
+```asm
+004139E0 - CWorld::EnterUser
 00413A50 - CWorld::BillingRemainTime
 00413A90 - CWorld::RenewRemainTime
 00413B30 - CWorld::LoginUser
