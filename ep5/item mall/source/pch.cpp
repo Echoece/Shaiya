@@ -87,7 +87,7 @@ BOOL UsePoint(DWORD dwUid, DWORD dwCost)
 	*pPoint = dwPoint;
 	//checks if the user has enough points to buy the item
 	if (dwCost > dwPoint) return FALSE; //returns 0 if the cost is greater than the points
-	//else, it returns true and store a value of 1 in eax
+	//else, it returns true and stores a value of 1 in eax
 	return TRUE;
 }
 //updates the user's points after buying an item
@@ -112,7 +112,7 @@ DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
 	}
 	return 0;
 }
-//creates a thread using the function that update points
+//creates a thread using the function that updates points
 void SetPoint(DWORD dwUid)
 {
 	CreateThread(NULL, 0, UpdatePoint, (PVOID)dwUid, NULL, 0);
