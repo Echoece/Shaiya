@@ -1,4 +1,4 @@
-**ep5 ps_game functions**
+**ps_game functions**
 ```asm
 004139E0 - CWorld::EnterUser
 00413A50 - CWorld::BillingRemainTime
