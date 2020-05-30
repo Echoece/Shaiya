@@ -20,7 +20,7 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 1. copy the dll, ini, and ps_game to your bin and put your account in the ini
 
 **revisions**
-* the code is smaller, more readable, and has different source code for hooks
+* the code is smaller, more readable, and uses different source code for hooks
 * added support for reading the account username and password from an ini file
 
 **contents**
