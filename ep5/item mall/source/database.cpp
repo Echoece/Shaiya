@@ -12,7 +12,7 @@ BOOL CDataBase::LinkDataBase()
    CoInitialize(NULL);
    try
    {
-	   HRESULT hr1 = m_pConnect.CreateInstance("ADODB.Connection");
+	   HRESULT hr1 = m_pConnect.CreateInstance(L"ADODB.Connection");
 	   if (FAILED(hr1))
 	   {
 		   return FALSE;
@@ -22,27 +22,16 @@ BOOL CDataBase::LinkDataBase()
 	{
 		OutputDebugString(L"");
 	}
-	OutputDebugString(L"");
+	LPCTSTR szPath = L".\\ncash.ini"; //define the path of Db.ini as the current directory and create a variable
+	WCHAR szUsername[32]; //initialize the username variable
+	WCHAR szPassword[32]; //initialize the password variable
+	GetPrivateProfileString(L"NCash", L"Uid", L"", szUsername, 32, szPath); //parse the ini and return the username
+	GetPrivateProfileString(L"NCash", L"Pwd", L"", szPassword, 32, szPath); //parse the ini and return the password
 	CString szLink;
-	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;Uid=yourusername1234;Pwd=yourpassword1234;");
-	m_pConnect->Open(_bstr_t(szLink), _bstr_t(L""), _bstr_t(L""), adOpenUnspecified);
-	return TRUE;
-}
-
-BOOL CDataBase::LinkDataBase(CString ip,CString DbName,CString UserName,CString Pw)
-{
-	try
-	{
-		m_pConnect.CreateInstance("ADODB.Connection");
-		CString szLink;
-		szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;Uid=yourusername1234;Pwd=yourpassword1234;", ip, DbName, UserName, Pw);
-		m_pConnect->Open(_bstr_t(szLink), _bstr_t(L""), _bstr_t(L""), adModeUnknown);
-	}
-	catch (_com_error)
-	{
-		return FALSE;
-	}
-
+	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;"); //define the provider, ip, and database
+	CString szUid = szUsername; //convert the username from wchar_t to a string
+	CString szPwd = szPassword; //convert the password from wchar_t to a string
+	m_pConnect->Open(_bstr_t(szLink), _bstr_t(szUid), _bstr_t(szPwd), NULL); //pass the string and the login variables
 	return TRUE;
 }
 

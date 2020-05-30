@@ -87,7 +87,7 @@ BOOL UsePoint(DWORD dwUid, DWORD dwCost)
 	*pPoint = dwPoint;
 	//checks if the user has enough points to buy the item
 	if (dwCost > dwPoint) return FALSE; //returns 0 if the cost is greater than the points
-	//else, it returns true and stores a value of 1 in eax
+	//else, it returns true and store a value of 1 in eax
 	return TRUE;
 }
 //updates the user's points after buying an item
@@ -112,7 +112,7 @@ DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
 	}
 	return 0;
 }
-//creates a thread using the function that updates points
+//creates a thread using the function that update points
 void SetPoint(DWORD dwUid)
 {
 	CreateThread(NULL, 0, UpdatePoint, (PVOID)dwUid, NULL, 0);
@@ -122,12 +122,12 @@ void* Hook(DWORD address, int length, DWORD target);
 //creates a thread to check the database connection
 DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter)
 {
+	//checks the database connection
+	if (!g_DBobj.LinkDataBase()) return 0;
 	//writes functions in memory
 	dwGetPoint = (DWORD)GetPoint;
 	dwUsePoint = (DWORD)UsePoint;
 	dwSetPoint = (DWORD)SetPoint;
-	//checks the database connection
-	if (!g_DBobj.LinkDataBase()) return 0;
 	//defines addresses for asm hooks
 	Hook(0x47D151, 6, (DWORD)ShopHook1);
 	Hook(0x48801F, 6, (DWORD)ShopHook2);

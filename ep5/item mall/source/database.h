@@ -20,7 +20,6 @@ class CDataBase
 {
 public:
 	CDataBase(void);
-	BOOL LinkDataBase(CString ip,CString DbName,CString UserName,CString Pw);
 	BOOL LinkDataBase();
 	BOOL ExeSqlByCon(CString szSql);
 
