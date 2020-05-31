@@ -4,6 +4,7 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 
 **known bugs**
 * sometimes the ps_game service doesn't start at the first attempt
+* sometimes fails to query sql when buying items
 
 **compatibility**
 
