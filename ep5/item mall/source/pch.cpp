@@ -87,7 +87,7 @@ BOOL UsePoint(DWORD dwUid, DWORD dwCost)
 	*pPoint = dwPoint;
 	//checks if the user has enough points to buy the item
 	if (dwCost > dwPoint) return FALSE; //returns 0 if the cost is greater than the points
-	//else, it returns true and store a value of 1 in eax
+	//else, it returns true and stores a value of 1 in eax
 	return TRUE;
 }
 //updates the user's points after buying an item
