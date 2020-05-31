@@ -2,10 +2,6 @@
 
 https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL%202012
 
-**known bugs**
-* sometimes the ps_game service doesn't start at the first attempt
-* sometimes fails to query sql when buying items
-
 **compatibility**
 
 * SQL Server 2019
@@ -21,15 +17,16 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 * 4996;4838;
 
 **instructions**
-1. copy the dll, ini, and ps_game to your bin edit the ini username and password
+1. create a login on ps_userdata using ncash.sql with 16 character credentials
+2. search the dll as unicode text for yourusername1234 and yourpassword1234
+3. edit the username and password to match the account you made with ncash.sql
 
 **revisions**
-* the code is smaller, more readable, and uses different source code for hooks
-* added support for reading the account username and password from an ini file
+* made the code smaller, more readable, and used different code for asm hooks
+* 16 character username and password with a more compatible connection string
 
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
-* the ini file that ncash.dll will parse to get the username and password
 * ps_dbAgent for ep5 and usp_Save_User_BuyPointItems2 procedure that it needs
 * linked servers query that needs to be edited to match your login credentials
 * usp_Save_User_BuyPointItems2 that the ep5 ps_dbAgent requires
