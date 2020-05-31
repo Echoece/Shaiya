@@ -24,7 +24,9 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 * added support for reading the account username and password from an ini file
 
 **ep6 version**
-https://github.com/426f776965/shaiya-solutions/blob/master/ep6/ItemMallFix.dll
+* uses Db.ini like pet.dll to get the username and password
+https://github.com/426f776965/shaiya-solutions/tree/master/ep6
+
 
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
