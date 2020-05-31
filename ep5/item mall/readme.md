@@ -19,7 +19,7 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 **instructions**
 1. create a login on ps_userdata using ncash.sql with 16 character credentials
 2. search the dll as unicode text for yourusername1234 and yourpassword1234
-3. edit the username and password to match the account you made with ncash.sql
+3. edit the username and password to match the account created with ncash.sql
 
 **revisions**
 * made the code smaller, more readable, and used different code for asm hooks
