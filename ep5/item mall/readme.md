@@ -3,7 +3,7 @@
 https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL%202012
 
 **known bugs**
-* ps_game service doesn't start on the first try sometimes but starts on the second try
+* sometimes the ps_game service doesn't start at the first attempt
 
 **compatibility**
 
