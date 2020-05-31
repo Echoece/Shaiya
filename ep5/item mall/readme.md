@@ -21,10 +21,6 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 2. search the dll as unicode text for yourusername1234 and yourpassword1234
 3. edit the username and password to match the account created with ncash.sql
 
-**revisions**
-* made the code smaller, more readable, and used different code for asm hooks
-* 16 character username and password with a more compatible connection string
-
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
 * ps_dbAgent for ep5 and usp_Save_User_BuyPointItems2 procedure that it needs
