@@ -6,7 +6,7 @@
 **warning**
 
 * ps_game may not start the first time
-* ps_game crashed sometimes when purchasing before this version
+* in the last version, the ps_game crashed sometimes when purchasing
 
 **notes**
 
