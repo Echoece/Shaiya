@@ -5,13 +5,10 @@ CDataBase g_DBobj;
 //defines return addresses and initializes variables
 DWORD dwReturnAddr1 = 0x47D157;
 DWORD dwGetPoint = 0;
-DWORD dwReturnAddr2 = 0x488025;
-DWORD dwFalseAddr = 0x488027;
-DWORD dwUsePoint = 0;
-DWORD dwReturnAddr3 = 0x488D5F;
+DWORD dwReturnAddr2 = 0x488D5F;
 DWORD dwSetPoint = 0;
 //defines the asm hook for getting the user's points
-__declspec(naked) void ShopHook1()
+__declspec(naked) void GetHook()
 {
 	_asm
 	{
@@ -29,30 +26,8 @@ __declspec(naked) void ShopHook1()
 		jmp dwReturnAddr1
 	}
 }
-//defines the asm hook for spending points
-__declspec(naked) void ShopHook2()
-{
-	_asm
-	{
-		pushad //save the data stored in all 32 bit registers
-		push ecx //save ecx              
-		mov ecx,[edi+0x582C] //move the useruid into ecx
-		push ecx //save the useruid data in ecx              
-		call dwUsePoint //call the boolean function to check if the user has enough points
-		//the true or false return value will be in eax
-		add esp,0x8 //add 8 bytes to the stack
-		cmp al,0x1 //check if the result in eax is true by checking the lowest byte of eax
-		popad //restore previous data to all 32 bit registers
-		jne _false //disallow buying the item if the boolean function returned false
-		//orginal code
-		cmp ecx,dword ptr[edi+0x5AC0]
-		jmp dwReturnAddr2
-		_false:
-		jmp dwFalseAddr
-	}
-}
 //defines the asm hook for updating the user's points
-__declspec(naked) void ShopHook3()
+__declspec(naked) void SetHook()
 {
 	_asm
 	{
@@ -62,7 +37,7 @@ __declspec(naked) void ShopHook3()
 		call dwSetPoint //call the function that updates the points
 		add esp,0x4 //add 4 bytes to the stack
 		popad //restore previous data to all 32 bit registers
-		jmp dwReturnAddr3
+		jmp dwReturnAddr2
 	}
 }
 //queries sql to get the user's points
@@ -71,24 +46,6 @@ void GetPoint(DWORD dwUid, PVOID pAddr)
 	CString szSql;
 	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
 	*((DWORD*)pAddr) = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
-}
-//queries sql to check if the user has enough points to buy an item
-BOOL UsePoint(DWORD dwUid, DWORD dwCost)
-{
-	PDWORD pPoint; //initialize a variable for the user's points
-	_asm
-	{
-		lea eax,[edi+0x5AC0] //load the user's points into eax
-		mov pPoint,eax //move eax into the variable
-	}
-	CString szSql;
-	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
-	DWORD dwPoint = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
-	*pPoint = dwPoint;
-	//checks if the user has enough points to buy the item
-	if (dwCost > dwPoint) return FALSE; //returns 0 if the cost is greater than the points
-	//else, it returns true and stores a value of 1 in eax
-	return TRUE;
 }
 //updates the user's points after buying an item
 DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
@@ -124,12 +81,9 @@ DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter)
 	if (!g_DBobj.LinkDataBase()) return 0;
 	//writes functions in memory
 	dwGetPoint = (DWORD)GetPoint;
-	dwUsePoint = (DWORD)UsePoint;
 	dwSetPoint = (DWORD)SetPoint;
 	//defines addresses for asm hooks
-	Hook(0x47D151, 6, (DWORD)ShopHook1);
-	Hook(0x48801F, 6, (DWORD)ShopHook2);
-	Hook(0x48876F, 5, (DWORD)ShopHook3);
-
+	Hook(0x47D151, 6, (DWORD)GetHook);
+	Hook(0x48876F, 5, (DWORD)SetHook);
 	return 0;
 }
