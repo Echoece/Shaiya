@@ -69,8 +69,8 @@ __declspec(naked) void ShopHook3()
 void GetPoint(DWORD dwUid, PVOID pAddr)
 {
 	CString szSql;
-	szSql.Format(L"select point from ps_userdata.dbo.users_master where useruid=%d", dwUid);
-	*((DWORD*)pAddr) = _tcstoul(g_DBobj.ExeSqlByCommand(szSql, L"point"), 0, 10);
+	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
+	*((DWORD*)pAddr) = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
 }
 //queries sql to check if the user has enough points to buy an item
 BOOL UsePoint(DWORD dwUid, DWORD dwCost)
@@ -82,8 +82,8 @@ BOOL UsePoint(DWORD dwUid, DWORD dwCost)
 		mov pPoint,eax //move eax into the variable
 	}
 	CString szSql;
-	szSql.Format(L"select point from ps_userdata.dbo.users_master where useruid=%d", dwUid);
-	DWORD dwPoint = _tcstoul(g_DBobj.ExeSqlByCommand(szSql, L"point"), 0, 10);
+	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
+	DWORD dwPoint = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
 	*pPoint = dwPoint;
 	//checks if the user has enough points to buy the item
 	if (dwCost > dwPoint) return FALSE; //returns 0 if the cost is greater than the points
