@@ -1,7 +1,7 @@
 **contents**
 
 * ct file that blocks pets, wings, and costumes from being equipped or switched in pvp zones
-* item mall dll that reads the account username and password from Db.ini (possibly unstable)
+* item mall dll that reads the account username and password from Db.ini (don't use it live)
 
 **warning**
 
