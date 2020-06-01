@@ -12,7 +12,7 @@ BOOL CDataBase::LinkDataBase()
    CoInitialize(NULL);
    try
    {
-	   HRESULT hr1 = m_pConnect.CreateInstance(_T("ADODB.Connection"));
+	   HRESULT hr1 = m_pConnect.CreateInstance(L"ADODB.Connection");
 	   if (FAILED(hr1))
 	   {
 		   return FALSE;
