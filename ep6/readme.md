@@ -4,6 +4,7 @@
 
 **notes**
 * the only difference in the ep6 item mall dll and the ep5 version is this database function
+* the connection delay probably won't work if this dll is hooked before pet.dll
 
 ```
 BOOL CDataBase::LinkDataBase()
