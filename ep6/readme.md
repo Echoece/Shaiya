@@ -3,6 +3,11 @@
 * ct file that blocks pets, wings, and costumes from being equipped or switched in pvp zones
 * item mall dll that reads the account username and password from Db.ini (possibly unstable)
 
+**warning**
+
+* ps_game may not start the first time
+* ps_game crashed sometimes when purchasing before this version
+
 **notes**
 
 * the difference between this item mall dll and the one in the ep5 directory is this function
