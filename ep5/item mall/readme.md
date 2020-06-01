@@ -16,6 +16,10 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 **disable specific warnings**
 * 4996;4838;
 
+**ep6 version**
+
+https://github.com/426f776965/shaiya-solutions/tree/master/ep6
+
 **instructions**
 1. create a login on ps_userdata using ncash.sql with 16 character credentials
 2. search the dll as unicode text for yourusername1234 and yourpassword1234
