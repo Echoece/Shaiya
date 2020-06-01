@@ -1,7 +1,5 @@
 #include "pch.h"
 
-extern DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter);
-
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
 {
 	switch (dwReason)
