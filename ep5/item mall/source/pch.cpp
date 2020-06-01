@@ -117,8 +117,6 @@ void SetPoint(DWORD dwUid)
 {
 	CreateThread(NULL, 0, UpdatePoint, (PVOID)dwUid, NULL, 0);
 }
-//defines the function for hooking addresses
-void* Hook(DWORD address, int length, DWORD target);
 //creates a thread to check the database connection
 DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter)
 {
