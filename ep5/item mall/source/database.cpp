@@ -22,7 +22,6 @@ BOOL CDataBase::LinkDataBase()
 	{
 		OutputDebugString(L"");
 	}
-	OutputDebugString(L"");
 	CString szLink;
 	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;Uid=yourusername1234;Pwd=yourpassword1234;");
 	m_pConnect->Open(_bstr_t(szLink), _bstr_t(L""), _bstr_t(L""), adModeUnknown);
