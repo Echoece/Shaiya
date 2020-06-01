@@ -26,7 +26,7 @@ BOOL CDataBase::LinkDataBase()
 	wcscat(szPath, L".\\Db.ini"); //get the absolute path to the initialization file
 	wchar_t szUsername[255]; //initialize a variable and buffer for the username key
 	wchar_t szPassword[255]; //initialize a variable and buffer for the password key
-	GetPrivateProfileString(L"DbInfo", L"Account", L"", szUsername, 255, szPath); //return the username key
+	GetPrivateProfileString(L"DbInfo", L"Account", L"", szUsername, 255, szPath); //return the user key
 	GetPrivateProfileString(L"DbInfo", L"Pw", L"", szPassword, 255, szPath); //return the password key
 	CString szLink; //initialize the connection string variable
 	CString szUid = szUsername; //convert the username to a string
