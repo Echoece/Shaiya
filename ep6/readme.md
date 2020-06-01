@@ -21,18 +21,18 @@ BOOL CDataBase::LinkDataBase()
 	{
 		OutputDebugString(L"");
 	}
-	wchar_t szPath[255];
-	GetCurrentDirectory(MAX_PATH, szPath);
-	wcscat(szPath, L".\\Db.ini");
-	wchar_t szUsername[255];
-	wchar_t szPassword[255];
-	GetPrivateProfileString(L"DbInfo", L"Account", L"", szUsername, 255, szPath);
-	GetPrivateProfileString(L"DbInfo", L"Pw", L"", szPassword, 255, szPath);
-	CString szLink; 
-	CString szUid = szUsername;
-	CString szPwd = szPassword;
-	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;");
-	m_pConnect->Open(_bstr_t(szLink), _bstr_t(szUid), _bstr_t(szPwd), adModeUnknown);
+	wchar_t szPath[255]; //initialize a variable and set a buffer for the initialization file path
+	GetCurrentDirectory(MAX_PATH, szPath); //read the current directory
+	wcscat(szPath, L".\\Db.ini"); //get the absolute path to the initialization file
+	wchar_t szUsername[255]; //initialize a variable and buffer for the username key
+	wchar_t szPassword[255]; //initialize a variable and buffer for the password key
+	GetPrivateProfileString(L"DbInfo", L"Account", L"", szUsername, 255, szPath); //return the username key
+	GetPrivateProfileString(L"DbInfo", L"Pw", L"", szPassword, 255, szPath); //return the password key
+	CString szLink; //initialize the connection string variable
+	CString szUid = szUsername; //convert the username to a string
+	CString szPwd = szPassword; //convert the password to a string
+	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;"); //define the connection string
+	m_pConnect->Open(_bstr_t(szLink), _bstr_t(szUid), _bstr_t(szPwd), adModeUnknown); //login with the account
 	return TRUE;
 }
 ```
