@@ -1,9 +1,9 @@
 **contents**
 * ct file that blocks pets, wings, and costumes from being equipped or switched in pvp zones
-* item mall dll that reads the username and password from Db.ini
+* item mall dll that reads the username and password from Db.ini 
 
 **notes**
-* the only difference in the code for the this version and the ep5 version is this function
+* the only difference in the ep6 item mall dll and the ep5 version is this database function
 
 ```
 BOOL CDataBase::LinkDataBase()
