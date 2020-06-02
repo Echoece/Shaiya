@@ -21,9 +21,8 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 https://github.com/426f776965/shaiya-solutions/tree/master/ep6
 
 **instructions**
-1. create a login on ps_userdata using ncash.sql with 16 character credentials
-2. search the dll as unicode text for yourusername1234 and yourpassword1234
-3. edit the username and password to match the account created with ncash.sql
+1. add the ps_game, ncash.dll, and ncash.ini to your bin folder
+2. add your username and password to the ini file
 
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
