@@ -28,7 +28,6 @@ https://github.com/426f776965/shaiya-solutions/tree/master/ep6
 * ps_game reported not to have random disconnects with one hook for ncash.dll
 * ps_dbAgent for ep5 and usp_Save_User_BuyPointItems2 procedure that it needs
 * linked servers query that needs to be edited to match your login credentials
-* usp_Save_User_BuyPointItems2 that the ep5 ps_dbAgent requires
 
 **notes**
 * the jump to hook the dll is at address 005312FB and overwrites the following code
