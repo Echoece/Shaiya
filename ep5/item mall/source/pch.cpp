@@ -47,7 +47,7 @@ void GetPoint(DWORD dwUid, PVOID pAddr)
 	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
 	*((DWORD*)pAddr) = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
 }
-//updates the user's points after buying an item
+//updates the users points
 DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
 {
 	DWORD dwUid = (DWORD)lpParameter;
@@ -74,7 +74,7 @@ void SetPoint(DWORD dwUid)
 {
 	CreateThread(NULL, 0, UpdatePoint, (PVOID)dwUid, NULL, 0);
 }
-//creates a thread to check the database connection
+//creates a thread to check the database connection and set hooks
 DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter)
 {
 	//checks the database connection
