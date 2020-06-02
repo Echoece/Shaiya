@@ -22,9 +22,16 @@ BOOL CDataBase::LinkDataBase()
 	{
 		OutputDebugString(L"");
 	}
-	CString szLink;
-	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;Uid=yourusername1234;Pwd=yourpassword1234;");
-	m_pConnect->Open(_bstr_t(szLink), _bstr_t(L""), _bstr_t(L""), adModeUnknown);
+	Sleep(500); //delay the function for a bit
+	wchar_t szUsername[255]; //initialize the username variable and declare a buffer size
+	wchar_t szPassword[255]; //initialize the password variable and declare a buffer size
+	GetPrivateProfileString(L"NCash", L"Uid", L"", szUsername, 255, L".\\ncash.ini"); //get username key
+	GetPrivateProfileString(L"NCash", L"Pwd", L"", szPassword, 255, L".\\ncash.ini"); //get password key
+	CString szLink; //initialize the query string variable
+	CString szUid = szUsername; //convert the username to a string
+	CString szPwd = szPassword; //convert the password to a string
+	szLink.Format(L"Provider=SQLOLEDB;Server=127.0.0.1;Database=PS_UserData;"); //define the login string
+	m_pConnect->Open(_bstr_t(szLink), _bstr_t(szUid), _bstr_t(szPwd), adModeUnknown); //execute the query
 	return TRUE;
 }
 
