@@ -22,7 +22,7 @@ https://github.com/426f776965/shaiya-solutions/tree/master/ep6
 
 **instructions**
 1. add the ps_game, ncash.dll, and ncash.ini to your bin folder
-2. add your username and password to the ini file
+2. add your sql account username and password to the ini file
 
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
