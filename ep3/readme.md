@@ -28,4 +28,4 @@
 8. go to the Output/SData folder and copy the new NpcQuest.SData to the Bin/Data directory
 
 *when the repository is linked with Shaiya Studio it will save an decrypted duplicate of the NpcQuest.SData
-from the client to the server. certainly a convenient feature, but the author denies this behavior exists.
+from the client to the server. certainly a convenient feature, but the author denies this behavior exists.*
