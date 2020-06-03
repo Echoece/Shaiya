@@ -7,3 +7,7 @@
 * ct file that blocks defenders and guardians from using skill reset stones and blocks target res runes in grb
 * ps_dbAgent with packet based dupe fix with edited [dbo].[usp_Save_Char_Info_E] (credit: lilprohacker)
 * game.exe with antifreeze, speed recreation, speed enchantment, and exploit solutions
+* apostrophe removal query for mobs, skills, and items that should be executed after updating the tables
+
+**notes**
+npc names and quest names will still set insert errors unless remove them from the server npcquest.sdata
