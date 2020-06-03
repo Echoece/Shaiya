@@ -1,6 +1,6 @@
 **contents**
 * sql query that will solve the nostrum hack by making nostrum skills learned above the maximum server level
-* ct files that help solve issues with rune skill cutting, the skill cooldown exploit, and prevent the stealth exploit
+* ct files that help solve issues with rune skill cutting, the skill cooldown exploit, and the stealth exploit
 * ct file that will allow rangers and sins to use skills from stealth like they are able to in newer episodes
 * ct file that corrects the bug of prior ranking battle points stacking with the current ranking battle points
 * game.exe with antifreeze and exploit solutions
@@ -13,4 +13,6 @@
 
 **notes**
 * execute remove apostrophes, nostrum hack solution, and no enchant or oj after mass skill and item updates
+* npc names and quest names will still set insert errors if they exist in the server side npcquest.sdata
+* the ep3 ps_game expects to read 3 drops per mob from the mobitems table and cannot handle more
 * all ep3 client sdata files must be decrypted
