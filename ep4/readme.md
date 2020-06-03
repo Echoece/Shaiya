@@ -10,4 +10,4 @@
 * apostrophe removal query for mobs, skills, and items that should be executed after updating the tables
 
 **notes**
-* npc names and quest names will still set insert errors unless remove them from the server npcquest.sdata
+* npc names and quest names will still set insert errors if they exist in the server side npcquest.sdata
