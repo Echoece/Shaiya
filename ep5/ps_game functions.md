@@ -1161,3 +1161,5 @@
 004F2440 - SWorker::Run
 004F27E0 - SWorker::AcceptPost
 004F28E0 - SWorker::RecvPost
+0058796C - g_pClientToDBAgent
+00587974 - g_pClientToGameLog
