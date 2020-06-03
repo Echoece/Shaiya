@@ -13,6 +13,6 @@
 
 **notes**
 * execute remove apostrophes, nostrum hack solution, and no enchant or oj after mass skill and item updates
-* npc names and quest names will still cause insert errors the server npcquest.sdata has apostrophes
+* npc names and quest names will still cause insert errors if the server npcquest.sdata has apostrophes
 * the ep3 ps_game expects to read 3 drops per mob from the mobitems table and cannot handle more
 * all ep3 client sdata files must be decrypted
