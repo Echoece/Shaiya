@@ -27,4 +27,4 @@
 7. then, execute NpcQuest_sdata in the command prompt and everything should compile without errors
 8. go to the Output/SData folder and copy the new NpcQuest.SData to the Bin/Data directory
 
-*when the repository is linked with Shaiya Studio it will save a decrypted duplicate of the NpcQuest.SData from the client to the server directory. the author claims this behavior is non-existent. ep5 server files will escape the apostrophes with underscores before inserting the data.*
+*when the repository is linked with Shaiya Studio it will save a decrypted duplicate of the NpcQuest.SData from the client to the server directory. the author claims this behavior is non-existent. ep5 server files will escape the apostrophes.*
