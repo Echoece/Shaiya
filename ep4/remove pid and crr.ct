@@ -1,0 +1,25 @@
+//remove PID and CRR by Bowie 01/2020
+[ENABLE]
+//PID
+0045A1BB:
+jmp 0045A3BD
+nop
+
+//CRR
+00459A16:
+jmp 00459C1A
+nop
+
+004593F6:
+jmp 0045958B
+nop
+
+[DISABLE]
+0045A1BB:
+jne 0045A3BD
+
+00459A16:
+jne 00459C1A
+
+004593F6:
+jne 0045958B
