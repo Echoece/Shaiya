@@ -23,7 +23,8 @@ https://github.com/426f776965/shaiya-solutions/tree/master/ep6
 **instructions**
 1. add the ps_game, msado15.dll, ncash.dll, and ncash.ini to your bin folder
 2. add your sql account username and password to the ini file
-3. the db_Agent is optional, but make sure you're using the same one for ep5
+3. execute usp_Save_User_BuyPointItems2
+4. adding the db_Agent is optional because it wasn't modified for any reason
 
 **contents**
 * ps_game reported not to have random disconnects with one hook for ncash.dll
