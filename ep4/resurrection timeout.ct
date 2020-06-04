@@ -1,0 +1,9 @@
+//auto res timeout by Bowie 01/2020
+//004B74EF - change 0B4 in game.exe
+[ENABLE]
+00458EFE:
+add eax,000088B8 //35 seconds
+//client should be 5 seconds faster
+[DISABLE]
+00458EFE:
+add eax,00030D40
