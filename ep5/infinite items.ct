@@ -1,0 +1,55 @@
+//infinite items above 1 by Bowie 12/2019
+[ENABLE]
+alloc(newmem,2048)
+label(return)
+label(remove)
+label(exit)
+
+newmem:
+//save the data in all registers
+pushad
+pushfd
+//items in edx will decrement
+mov edx,[ebx+30]
+cmp [edx],#100000 //all AP items
+jg remove
+cmp [edx],#25224 //fortune bags 224-228
+je remove
+cmp [edx],#25225
+je remove
+cmp [edx],#25226
+je remove
+cmp [edx],#25227
+je remove
+cmp [edx],#25228
+je remove
+cmp byte ptr [ebx+40],#27 //quest items 27-29
+je remove
+cmp byte ptr [ebx+40],#28
+je remove
+cmp byte ptr [ebx+40],#29
+je remove
+cmp byte ptr [ebx+40],#44 //don't remove this
+je remove
+mov ecx,[ebx+30] //ecx items won't decrement
+cmp [ecx],0 //0 = all items will be endless
+jne exit //avoid decrementing ecx items
+
+remove: //decrement edx items
+dec [ebx+42]
+
+exit:
+//restore all registers to previous values
+popfd
+popad
+jmp return
+
+00472ACD:
+jmp newmem
+return:
+
+[DISABLE]
+dealloc(newmem)
+00472ACD:
+dec al
+mov [ebx+42],al
