@@ -1,0 +1,10 @@
+//remove 5% commission by Bowie 01/2020
+//0055C3E7 - change to jmp in game.exe
+[ENABLE]
+0047922A:
+nop
+nop
+
+[DISABLE]
+0047922A:
+sub edx,eax
