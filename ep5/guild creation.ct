@@ -1,0 +1,39 @@
+//set guild creation checks by Bowie 06/2020
+[ENABLE]
+//level
+00485056:
+cmp word ptr [ebp+00000136],01 //change here
+//grow
+0048506A: //make sure this matches the other
+cmp byte ptr [ebp+0000012F],00 //change here
+//grow
+004850E0: //make sure this matches the other
+cmp byte ptr [esi+0000012F],00 //change here
+//money
+004381FB:
+cmp [ecx+00000140],00000000 //change here
+//members
+004850A8:
+cmp eax,02 //change here
+//requests
+0048542C:
+cmp dword ptr [esi+24],02 //change here
+
+[DISABLE]
+00485056:
+cmp word ptr [ebp+00000136],0B
+
+0048506A:
+cmp byte ptr [ebp+0000012F],01
+
+004850E0:
+cmp byte ptr [esi+0000012F],01
+
+004381FB:
+cmp [ecx+00000140],000003E8
+
+004850A8:
+cmp eax,07
+
+0048542C:
+cmp dword ptr [esi+24],07
