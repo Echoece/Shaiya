@@ -9,7 +9,7 @@
 * ct file that will prevent the service from crashing if a gm dismounts while invisible
 * ct file that disables the /iclear and /eclear commands
 * ct file that blocks defenders and guardians from using skill reset stones and blocks target res runes in grb
-* ct file that allows the conditions for creating a guild to be changed
+* ct file that allows all the conditions for creating a guild to be changed
 * ct file that allows resurrection level 1 to revive ultimate mode characters
 * ct file that gives perfect party experience bonus to parties with any amount of members
 * ct files that changes the enchant level cap and the pvp and pve damage caps
