@@ -1,0 +1,20 @@
+//gm joins other faction by Bowie 01/2020
+[ENABLE]
+alloc(newmem,128)
+label(return)
+
+newmem:
+cmp [ebp+00005768],0A
+jl 00467BA2
+cmp dl,[edi+0000012D]
+jmp return
+
+00467B89:
+jmp newmem
+nop
+return:
+
+[DISABLE]
+dealloc(newmem)
+00467B89:
+cmp dl,[edi+0000012D]
