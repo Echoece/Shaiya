@@ -1,0 +1,8 @@
+//set max enchant level by Bowie 12/2019
+[ENABLE]
+0046CCBD:
+cmp byte ptr [esp+13],#10 //change here
+
+[DISABLE]
+0046CCBD:
+cmp byte ptr [esp+13],14
