@@ -6,7 +6,6 @@
 * various cheat engine files that either solve bugs and exploits or add simple modifications to the game
 
 **notes**
-* npc names and quest names will still cause insert errors if the server NpcQuest.SData has apostrophes
 
 *when the repository is linked with Shaiya Studio it will save a decrypted duplicate of the NpcQuest.SData from the client to the server directory. npc and quest names will contain apostrophes. ep5 server files will escape the apostrophes with underscores.*
 
