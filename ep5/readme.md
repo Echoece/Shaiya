@@ -6,9 +6,13 @@
 * ct files that help solve issues with rune skill cutting by delaying the use of runes after using skills
 * ct file that will prevent rangers and assassins from adding or removing gear in stealth mode
 * ct file that will remove the code that keeps guards from detecting a character in stealth mode
-* ct file that will prevent the service from crashing if a gm dismounts while invisible (reported by two admins)
+* ct file that will prevent the service from crashing if a gm dismounts while invisible
 * ct file that disables the /iclear and /eclear commands
 * ct file that blocks defenders and guardians from using skill reset stones and blocks target res runes in grb
+* ct file that allows the conditions for creating a guild to be changed
+* ct file that allows resurrection level 1 to revive ultimate mode characters
+* ct file that gives perfect party experience bonus to parties with any amount of members
+* ct files that changes the enchant level cap and the pvp and pve damage caps
 
 **notes**
 * the ps_game has an extra code section beginning at address 04096000 that can be used for code caves ^_^
