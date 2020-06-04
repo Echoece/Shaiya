@@ -15,6 +15,7 @@
 * ct files that changes the enchant level cap and the pvp and pve damage caps
 * ct file that removes user warehouse and guild warehouse fees
 * ct file that allows the default movement speed of users to be changed (effective on login)
+* ct file that prevents item drop and ultimate mode death
 
 **notes**
 * the ps_game has an extra code section beginning at address 04096000 that can be used for code caves ^_^
