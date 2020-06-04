@@ -1,0 +1,8 @@
+//lv1 resurrects ultimate mode by Bowie 03/2020
+[ENABLE]
+0045A610:
+jmp ps_game.exe+5A61C
+
+[DISABLE]
+0045A610:
+jne ps_game.exe+5A61C
