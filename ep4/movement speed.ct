@@ -1,0 +1,26 @@
+//change movement speed by Bowie 02/2020
+[ENABLE]
+alloc(newmem,128)
+label(return)
+label(exit)
+{values:
+very slow = 0
+slow = 1
+normal = 2
+fast = 3
+very fast = 4}
+newmem:
+mov [esi+000012F0],03 //change here
+//takes effect upon character login
+exit:
+jmp return
+
+00454592:
+jmp newmem
+nop
+return:
+
+[DISABLE]
+dealloc(newmem)
+00454592:
+mov [esi+000012F0],eax
