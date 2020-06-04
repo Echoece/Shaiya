@@ -1,0 +1,44 @@
+//gm joins manual raid by Bowie 02/2020
+[ENABLE]
+alloc(newmem1,128)
+label(return1)
+label(exit1)
+alloc(newmem2,128)
+label(return2)
+label(exit2)
+
+newmem1:
+cmp dword ptr [ebp+00005768],0A
+jl 00467BC2
+cmp byte ptr [ecx+00000115],00
+
+exit1:
+jmp return1
+
+00467BA8:
+jmp newmem1
+nop
+nop
+return1:
+
+newmem2:
+cmp dword ptr [ebp+00005768],0A
+jl 004473E7
+cmp byte ptr [ecx+00000115],00
+
+exit2:
+jmp return2
+
+004473D9:
+jmp newmem2
+nop
+nop
+return2:
+
+[DISABLE]
+dealloc(newmem1)
+00467BA8:
+cmp byte ptr [ecx+00000115],00
+dealloc(newmem2)
+004473D9:
+cmp byte ptr [ecx+00000115],00
