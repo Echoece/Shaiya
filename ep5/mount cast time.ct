@@ -1,0 +1,25 @@
+//set mount cast time by Bowie 11/2019
+[ENABLE]
+alloc(newmem,128)
+label(return)
+label(exit)
+
+newmem: //only uncomment one of them
+//add esi,00000FA0 //4 seconds
+//add esi,00000BB8 //3 seconds
+//add esi,000007D0 //2 seconds
+//add esi,000003E8 //1 second
+add esi,00000080 //.12 second
+
+exit:
+jmp return
+
+0047714F:
+jmp newmem
+nop
+return:
+
+[DISABLE]
+dealloc(newmem)
+0047714F:
+add esi,00001388
