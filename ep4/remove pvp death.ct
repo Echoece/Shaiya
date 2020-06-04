@@ -1,0 +1,8 @@
+//remove pvp death by Bowie 02/2020
+[ENABLE]
+0045B06E:
+add eax,00 //death count
+
+[DISABLE]
+0045B06E:
+add eax,01
