@@ -1,0 +1,90 @@
+//remove blacksmith fees by Bowie 12/2019
+[ENABLE]
+0045FC73: //enchantment
+nop
+nop
+nop
+nop
+nop
+nop
+
+00461523: //linking
+nop
+nop
+nop
+nop
+nop
+nop
+
+0046464B: //repair all
+nop
+nop
+nop
+nop
+nop
+nop
+
+004649C9: //repair one
+nop
+nop
+nop
+nop
+nop
+nop
+
+00463D6F: //extraction
+nop
+nop
+nop
+nop
+nop
+nop
+
+00462473:
+nop
+nop
+nop
+nop
+nop
+nop
+
+00462D0D:
+nop
+nop
+nop
+nop
+nop
+nop
+
+004637A2:
+nop
+nop
+nop
+nop
+nop
+nop
+
+[DISABLE]
+0045FC73:
+mov [ebx+00000140],ecx
+
+00461523:
+mov [edi+00000140],eax
+
+0046464B:
+mov [ecx+00000140],eax
+
+004649C9:
+mov [ebp+00000140],eax
+
+00463D6F:
+sub [edi+00000140],edx
+
+00462473:
+sub [edi+00000140],ebp
+
+00462D0D:
+sub [edi+00000140],ecx
+
+004637A2:
+sub [edi+00000140],ebx
