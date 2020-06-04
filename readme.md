@@ -3,7 +3,7 @@
 * ps_login ct file that will decrease the amount of failed logins allowed before the client gets disconnected
 * ps_login with the aforementioned mods applied plus anti-injection (nubness) and handshake fix (anton)
 
-**notes**
+**ps_login notes**
 ```
 00406A30 - jmp to fix sql injection - nubness
 00404542 - jne to fix bad handshakes - anton
