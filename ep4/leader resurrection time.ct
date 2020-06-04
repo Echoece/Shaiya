@@ -1,0 +1,9 @@
+//leader res time by Bowie 12/2019
+//004B7700 - change 1E in game.exe
+[ENABLE]
+0046ABC3:
+add eax,00002710 //10 seconds
+
+[DISABLE]
+0046ABC3:
+add eax,00007530
