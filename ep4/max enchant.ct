@@ -1,0 +1,8 @@
+//set max enchant by Bowie 12/2019
+[ENABLE]
+0045FC31:
+cmp al,0A //change here
+//a value of 0 to disables enchant
+[DISABLE]
+0045FC31:
+cmp al,14
