@@ -4,4 +4,6 @@
 * ps_login with the aforementioned mods applied plus anti-injection (nubness) and handshake fix (anton)
 
 **connection overflow workaround**
-* 00411ABD - nop jnl (not applied to ps_login)
+```asm
+00411ABD - nop jnl (not applied to ps_login)
+```
