@@ -1,7 +1,7 @@
 //set pvp damage cap by Bowie 03/2020
 [ENABLE]
 004579F7:
-mov eax,00002710 //10k is ok for ep4
+mov eax,00002710 //10k
 
 [DISABLE]
 004579F7:
