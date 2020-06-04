@@ -1,0 +1,14 @@
+//remove warehouse fees by Bowie 05/2020
+[ENABLE]
+004693BA: //player
+db 90 90 90 90 90 90
+
+00436316: //guild
+db 90 90 90 90 90 90
+ 
+[DISABLE]
+004693BA:
+sub [edi+00000140],ecx
+
+00436316:
+sub [esi+00000140],eax
