@@ -1,0 +1,13 @@
+//gm enters visible by Bowie 02/2020
+[ENABLE]
+00448953:
+nop
+nop
+nop
+nop
+nop
+nop
+
+[DISABLE]
+00448953:
+mov [edi+00005774],al
