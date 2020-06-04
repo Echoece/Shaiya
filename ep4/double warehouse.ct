@@ -1,0 +1,49 @@
+//allow double warehouse by Bowie 01/2020
+//004FFAB4 - change to jmp in game.exe
+[ENABLE]
+004684EC:
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+004684F3:
+nop
+nop
+nop
+nop
+nop
+nop
+
+0046856A:
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+
+00468571:
+nop
+nop
+nop
+nop
+nop
+nop
+
+[DISABLE]
+004684EC:
+cmp dword ptr [ebp+000058CC],00
+
+004684F3:
+je 00469C37
+
+0046856A:
+cmp dword ptr [ebp+000058CC],00
+
+00468571:
+je 00469C37
