@@ -8,7 +8,7 @@
 **notes**
 * npc names and quest names will still cause insert errors if the server NpcQuest.SData has apostrophes
 
-*when the repository is linked with Shaiya Studio it will save a decrypted duplicate of the NpcQuest.SData from the client to the server directory. ep4 server files won't escape the apostrophes. ep5 server files will escape the apostrophes with underscores.*
+*when the repository is linked with Shaiya Studio it will save a decrypted duplicate of the NpcQuest.SData from the client to the server directory. ep4 server files won't escape the single quotes. ep5 server files will escape the apostrophes with underscores.*
 
 **solution**
 1. install Python26 and ZeroSignal's scripts and put the NpcQuest.SData in C:/Python26/Input/SData
