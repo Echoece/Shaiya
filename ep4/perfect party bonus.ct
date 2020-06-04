@@ -1,0 +1,9 @@
+//always get pp bonus by Bowie 03/2020
+[ENABLE]
+00458329:
+nop
+nop
+
+[DISABLE]
+00458329:
+jne 0045832D
