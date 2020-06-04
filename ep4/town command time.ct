@@ -1,0 +1,8 @@
+//town time by Bowie 01/2020
+[ENABLE]
+0046ADF6:
+add eax,00001388 //5 seconds
+
+[DISABLE]
+0046ADF6:
+add eax,00002710
