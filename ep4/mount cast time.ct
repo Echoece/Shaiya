@@ -1,0 +1,8 @@
+//mount cast time by Bowie 01/2020
+[ENABLE]
+004694F5:
+add esi,00000BB8 //3 seconds
+//don't go below 00000080
+[DISABLE]
+004694F5:
+add esi,00001388
