@@ -1,0 +1,44 @@
+//change default attack speed by Bowie 02/2020
+[ENABLE]
+alloc(newmem,128)
+label(return)
+label(exit)
+{esi+12EC already has a value of 5 stored in it
+
+extremely slow = 1
+very slow = 2
+slow = 3
+a bit slow = 4
+normal = 5
+a bit fast = 6
+fast = 7
+very fasy = 8
+extremely fast = 9
+
+so, we can do some simple math to get the result
+we want by adding or subtracting from the value.
+
+extremely slow = -4
+very slow = -3
+slow = -2
+a bit slow = -1
+normal = 0
+a bit fast = 1
+fast = 2
+very fasy = 3
+extremely fast = 4}
+newmem:
+mov [esi+000012EC],02 //change here
+//takes effect upon character login
+exit:
+jmp return
+
+004545E2:
+jmp newmem
+nop
+return:
+
+[DISABLE]
+dealloc(newmem)
+004545E2:
+mov [esi+000012EC],ebx
