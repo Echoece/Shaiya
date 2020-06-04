@@ -1,0 +1,24 @@
+//remove warehouse fees by Bowie 12/2019
+[ENABLE]
+0045C493: //player warehouse
+nop
+nop
+nop
+nop
+nop
+nop
+
+004305FF: //guild warehouse
+nop
+nop
+nop
+nop
+nop
+nop
+
+[DISABLE]
+0045C493:
+sub [edi+00000140],edx
+
+004305FF:
+sub [edi+00000140],edx
