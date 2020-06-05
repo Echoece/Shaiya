@@ -2,12 +2,11 @@
 #include "database.h"
 
 CDataBase g_DBobj;
-//defines return addresses and initializes variables
 DWORD dwReturnAddr1 = 0x47D157;
 DWORD dwGetPoint = 0;
 DWORD dwReturnAddr2 = 0x488D5F;
 DWORD dwSetPoint = 0;
-//defines the asm hook for getting the user's points
+//the asm hook for getting the user's points
 __declspec(naked) void GetHook()
 {
 	_asm
@@ -26,7 +25,7 @@ __declspec(naked) void GetHook()
 		jmp dwReturnAddr1
 	}
 }
-//defines the asm hook for updating the user's points
+//the asm hook for updating the user's points
 __declspec(naked) void SetHook()
 {
 	_asm
@@ -47,7 +46,7 @@ void GetPoint(DWORD dwUid, PVOID pAddr)
 	szSql.Format(L"SELECT Point FROM PS_UserData.dbo.Users_Master WHERE UserUID=%d", dwUid);
 	*((DWORD*)pAddr) = wcstoul(g_DBobj.ExeSqlByCommand(szSql, L"Point"), 0, 10);
 }
-//updates the users points
+//updates the user's points
 DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
 {
 	DWORD dwUid = (DWORD)lpParameter;
@@ -69,12 +68,12 @@ DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter)
 	}
 	return 0;
 }
-//creates a thread using the function that update points
+//creates a thread for the update function
 void SetPoint(DWORD dwUid)
 {
 	CreateThread(NULL, 0, UpdatePoint, (PVOID)dwUid, NULL, 0);
 }
-//creates a thread to check the database connection and set hooks
+//the main function
 DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter)
 {
 	//checks the database connection
