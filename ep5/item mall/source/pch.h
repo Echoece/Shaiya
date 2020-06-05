@@ -9,8 +9,6 @@
 #include <comdef.h>
 #include <vector>
 
-//defines the function for hooking addresses
 void* Hook(DWORD address, int length, DWORD target);
-
 DWORD __stdcall ShopConnect(_In_ LPVOID lpParameter);
 DWORD __stdcall UpdatePoint(_In_ LPVOID lpParameter);
