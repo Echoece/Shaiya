@@ -16,6 +16,9 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 **disable specific warnings**
 * 4996;4838;
 
+**building**
+* copy msado15.dll and msado15.tlh into the Debug folder
+
 **ep6 version**
 
 https://github.com/426f776965/shaiya-solutions/tree/master/ep6
