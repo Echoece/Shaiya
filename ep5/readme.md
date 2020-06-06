@@ -1,5 +1,5 @@
 **contents**
-* ct file edited for ep5 that prevents rune skill cutting and replaces my delay solution (credit: Cups)
+* ct file edited for ep5 that prevents rune skill cutting (credit: Cups)
 * ct file that stops all notice functions from injecting the database (/warning credit: Cups)
 * revised version of shen's item mall solution for ep5 servers along with the source code
 * ps_game that has been reversed to have no custom dll injections for those that don't want an item mall
