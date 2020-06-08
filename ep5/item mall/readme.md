@@ -9,6 +9,7 @@ https://github.com/zidane168/Shaiya-Projects/tree/master/Fix%20Item%20mall%20SQL
 * SQL Server 2016
 * SQL Server 2014
 * SQL Server 2012
+* SQL Server 2008
 
 **additional dependencies**
 * legacy_stdio_definitions.lib;
