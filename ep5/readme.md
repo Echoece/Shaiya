@@ -7,7 +7,8 @@
 * various cheat engine files that either solve bugs and exploits or add simple modifications to the game
 
 **notes**
-* the ps_game has an extra code section beginning at address 04096000 that can be used for code caves ^_^
+* ct files in this folder are also valid for "ep6" server files because the ps_game is the same build
+* the ps_game has an extra section beginning at address 04096000 that can be used for code caves ^_^
 
 **game.exe**
 * speed recreation
