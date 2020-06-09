@@ -1,5 +1,5 @@
 **contents**
-* ct file that registers a symbol you can call that allows you to build and send a 'notice all' packet
+* ct file that allows you to build a notice packet and send it to everyone by calling a registered symbol
 * ct file edited for ep5 (originally released for ep4) that prevents rune skill cutting (credit: Cups)
 * ct file that stops all notice functions from injecting the database (/warning credit: Cups)
 * revised version of shen's item mall solution for ep5 servers along with the source code
