@@ -3,7 +3,7 @@
 * item mall dll that reads the username and password from Db.ini
 
 **notes**
-* the ct files in the ep5 folder can be used with ep6 servers because the ps_game is the same
+* ct files in the ep5 folder can be used with ep6 servers because they use the same ps_game
 * the only difference in the ep6 item mall dll and the ep5 version is this database function
 
 ```
