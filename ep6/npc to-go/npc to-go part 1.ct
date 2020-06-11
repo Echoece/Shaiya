@@ -1,0 +1,50 @@
+[ENABLE]
+alloc(newmem,128)
+alloc(value1,4)
+alloc(value2,4)
+label(exit)
+label(jone)
+label(jtwo)
+
+value1:
+db 01
+
+value2:
+dd #257
+
+newmem:
+cmp [esp],game.exe+39740
+je jone
+cmp [esp],game.exe+3B41B
+je jtwo
+jmp exit
+jone:
+cmp [esp+000000A4],game.exe+1833F
+jne exit
+lea eax,[value1]
+movzx eax,byte ptr [eax]
+cmp eax,01
+je exit
+mov eax,00000000
+jmp game.exe+18712A
+jtwo:
+lea eax,[value2]
+movzx eax,byte ptr [eax]
+cmp eax,01
+je exit
+mov eax,00000000
+jmp game.exe+18712A
+exit:
+mov eax,[ecx+0000012C] //orginal code
+jmp game.exe+18712A
+
+"game.exe"+187124:
+jmp newmem
+nop
+
+[DISABLE]
+dealloc(newmem)
+dealloc(value1)
+dealloc(value2)
+"game.exe"+187124:
+mov eax,[ecx+0000012C]
