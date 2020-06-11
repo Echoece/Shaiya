@@ -1,0 +1,28 @@
+[ENABLE]
+alloc(newmem,128)
+alloc(array,32)
+label(exit)
+
+array:
+dd #102 #121 #103 #110 #111 #101
+
+newmem:
+cmp edi,05
+jg exit
+push ecx
+lea ecx,[array]
+mov ecx,[ecx+edi*4]
+mov [game.exe+5144E4],ecx
+pop ecx
+exit:
+call game.exe+11C070 //original code
+jmp game.exe+122165
+
+"game.exe"+122160:
+jmp newmem
+
+[DISABLE]
+dealloc(newmem)
+dealloc(array)
+"game.exe"+122160:
+call game.exe+11C070
