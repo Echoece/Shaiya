@@ -18,6 +18,6 @@ void __declspec(naked) npcHook() {
 	}
 }
 //the main function
-void npcHook() {
+void npcFunc() {
 	Hook(0x522160, 5, (DWORD)npcHook); //hooks the 2nd npc to-go address
 }
