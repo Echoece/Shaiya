@@ -4,7 +4,7 @@
 void __declspec(naked) npcHook() {
 	__asm {
 		cmp edi,0x5
-		jg _exit
+		jg _code
 		push ecx //save the current data in ecx
 		lea ecx,[npcArray] //load the npc window array into ecx
 		mov ecx,[ecx+edi*0x4] //move the window data into ecx
@@ -12,7 +12,7 @@ void __declspec(naked) npcHook() {
 		//otherwise, it'll get compiled as an address in the dll
 		mov dword ptr ds:[0x9144E4],ecx //move the npc window id
 		pop ecx //restore the previous data in ecx
-		_exit:
+		_code:
 		call npcCall //original code
 		jmp npcReturn
 	}
