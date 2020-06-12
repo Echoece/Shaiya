@@ -1,11 +1,11 @@
-//remove PID and CRR
+//no drop or um death
 [ENABLE]
-//PID
+//item drop
 004670E9:
 jmp 004672F7
 nop
 
-//CRR
+//um death
 004668B7:
 jmp 00466AC4
 nop
