@@ -9,11 +9,11 @@ dd #102 #121 #103 #110 #111 #101
 newmem:
 cmp edi,05
 jg exit
-push ecx
-lea ecx,[array]
-mov ecx,[ecx+edi*4]
-mov [game.exe+5144E4],ecx
-pop ecx
+push ecx //save the data in ecx
+lea ecx,[array] //load the array into ecx
+mov ecx,[ecx+edi*4] //move the window data into ecx
+mov [game.exe+5144E4],ecx //mov the npc window id
+pop ecx //restore ecx
 exit:
 call game.exe+11C070 //original code
 jmp game.exe+122165
