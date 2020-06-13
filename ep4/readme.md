@@ -1,4 +1,5 @@
 **contents**
+* ct file that will prevent all notice functions from injecting the database
 * ps_game that runs without the gameguard dlls and cauth config files (you can remove them from the bin)
 * ps_dbAgent with packet based dupe fix with edited [dbo].[usp_Save_Char_Info_E] (credit: lilprohacker)
 * game.exe with antifreeze, speed recreation, speed enchantment, and exploit solutions
