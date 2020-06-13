@@ -9,6 +9,7 @@ void npcFunc();
 void* Hook(DWORD address, int length, DWORD target);
 //store the npc window ids in an array of integers
 int npcArray[6] = { 102, 121, 103, 110, 111, 101 };
+//define call and return addresses in the game.exe
 DWORD npcCall = 0x51C070;
 DWORD npcReturn = 0x522165;
 
