@@ -1,2 +1,2 @@
 **contents**
-* c++ source code for casting random buffs on players when they gain exp
+* c++ dll source code for casting random buffs on players when they gain exp
