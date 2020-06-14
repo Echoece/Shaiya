@@ -33,7 +33,7 @@ void __declspec(naked) buffHook() {
 		pushad //save all registers
 		pushfd //save all flags
 		call randomId //call the random skill id function
-		//the skill id returned is in eax
+		//the skill id will be in eax
 		push esi //push the player register
 		push eax //push the skill id
 		push 0x1 //push the skill level
