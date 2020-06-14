@@ -9,7 +9,7 @@
 void buffFunc();
 //definition for the hook function
 void* Hook(DWORD address, int length, DWORD target);
-//define ps_game call, return, and function addresses
+//define ps_game return and function addresses
 DWORD buffReturn = 0x465152;
 DWORD GetSkillInfo = 0x41BB30;
 DWORD UseItemSkill = 0x4725B0;
