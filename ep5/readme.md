@@ -1,5 +1,5 @@
 **contents**
-* ct file that solves jump cutting by not sending a jump packet to the client
+* ct file that solves jump cutting by not sending jump packets to the client
 * ct file that allows you to build a notice packet and send it to everyone by calling a registered symbol
 * ct file that stops all notice functions from injecting the database (/warning credit: Cups)
 * revised version of shen's item mall solution for ep5 servers along with the source code
