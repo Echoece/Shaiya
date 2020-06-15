@@ -1,4 +1,5 @@
 **contents**
+* ct file that solves jump cut by not sending the packet to the client if the last byte indicates jumping
 * ct file that allows you to build a notice packet and send it to everyone by calling a registered symbol
 * ct file edited for ep5 (originally released for ep4) that prevents rune skill cutting (credit: Cups)
 * ct file that stops all notice functions from injecting the database (/warning credit: Cups)
