@@ -8,7 +8,7 @@ label(exit)
 06 05 01 00 00 00 00 - stand
 06 05 01 00 00 00 02 - jump}
 newmem: //avoids sending jump packets
-mov cl,[ebp+02] //move packet into cl
+mov cl,[ebp+02] //move data into cl
 cmp cl,02 //if the lowest byte is 02
 je 00479155 //don't send the packet
 mov [esp+22],edx
