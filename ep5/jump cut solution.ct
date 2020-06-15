@@ -1,15 +1,15 @@
 //jump cut solution by Bowie and alvx9 06/2020
-//basically, you can't see others jumping
 [ENABLE]
 alloc(newmem,128)
 label(return)
 label(exit)
-{06 05 01 00 00 00 01 - sit
+{packets for sit/stand/jump
+06 05 01 00 00 00 01 - sit
 06 05 01 00 00 00 00 - stand
 06 05 01 00 00 00 02 - jump}
-newmem:
-mov cl,[ebp+02]
-cmp cl,02 //if the lowest byte is 2
+newmem: //avoids sending jump packets
+mov cl,[ebp+02] //move packet into cl
+cmp cl,02 //if the lowest byte is 02
 je 00479155 //don't send the packet
 mov [esp+22],edx
 
