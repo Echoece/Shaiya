@@ -1,4 +1,5 @@
 **contents**
+* ct file that solves jump cutting by not sending jump packets to the client (users won't see others jump)
 * ct file that will prevent all notice functions from injecting the database
 * ps_game that runs without the gameguard dlls and cauth config files (you can remove them from the bin)
 * ps_dbAgent with packet based dupe fix with edited [dbo].[usp_Save_Char_Info_E] (credit: lilprohacker)
