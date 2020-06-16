@@ -1,0 +1,28 @@
+//jump cut solution by Bowie 06/2020
+[ENABLE]
+alloc(newmem,128)
+label(return)
+label(exit)
+{packets for sit/stand/jump
+06 05 01 00 00 00 01 - sit
+06 05 01 00 00 00 00 - stand
+06 05 01 00 00 00 02 - jump}
+newmem: //avoids sending jump packets
+mov cl,[ebp+02]
+cmp cl,02 //if lowest byte is 02
+je 0046AE46 //don't send the packet
+mov word ptr [esp+34],0506
+
+exit:
+jmp return
+
+0046A66C:
+jmp newmem
+db 90 90 90 90 90
+return:
+
+[DISABLE]
+dealloc(newmem)
+0046A66C:
+mov cl,[ebp+02]
+mov word ptr [esp+34],0506
